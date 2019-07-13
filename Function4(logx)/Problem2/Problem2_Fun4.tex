@@ -1,0 +1,105 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{wrapfig,blindtext} % For wraping text around image
+\usepackage{comment} % enables the use of multi-line comments (\ifx \fi)
+\usepackage{fullpage} % changes the margin
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{environ}
+\usepackage{tabto,enumitem}
+\usepackage{lipsum}
+\usepackage{graphicx} % For image
+
+\usepackage{tabto}
+\usepackage{booktabs} % For formal tables
+
+\usepackage[ruled]{algorithm2e} % For algorithms
+\renewcommand{\algorithmcfname}{ALGORITHM}
+
+\begin{document}
+\noindent
+\large\textbf{PROBLEM: 2 (Requirements)} \hfill \textbf{Jemish Kishor Paghadar} \\
+\normalsize\textbf{ SOEN-6011 (Software Engineering Processes)} \hfill \textbf{40080723} \\
+{\centering\large\textbf{Function 4 :  $F(x)= \log_b x$} \\} 
+
+
+
+\section*{Requirement : 1}
+    
+    \begin{itemize}[noitemsep]
+      \item \textbf{ID  : } FUNR1
+      \item \textbf{TYPE  : } Functional Requirement
+      \item \textbf{PRIORITY  : } 1
+      \item \textbf{VERSION  : } 1.0
+      \item\textbf{DIFFICULTY  :} Easy
+      \item \textbf{DESCRIPTION  : } System shall take two input x and base b and gives base-b logarithm of x. For example, user gives input $x= 10$ and $b = e$ then output will be 1. 
+      \item\textbf{RATIONALE  : } To perform functionality on them.
+      \end{itemize}
+      
+\section*{Requirement : 2}
+     \begin{itemize}[noitemsep]
+      \item \textbf{ID  : } FUNR2
+      \item \textbf{TYPE  : } Functional Requirement
+      \item \textbf{PRIORITY  : } 1
+      \item \textbf{VERSION  : } 1.0
+      \item\textbf{DIFFICULTY  :} Easy
+      \item \textbf{DESCRIPTION  : } When user gives negative value or zero as input to x in function $log_b x$, the system shall give the alert message that the result is not possible with this value and it should be within its domain.
+      \item\textbf{RATIONALE  : } To handle the cases where input is not from its domain.
+    \end{itemize}
+    
+\section*{Requirement : 3}
+     \begin{itemize}[noitemsep]
+      \item \textbf{ID  : } FUNR3
+      \item \textbf{TYPE  : } Functional Requirement
+      \item \textbf{PRIORITY  : } 1
+      \item \textbf{VERSION  : } 1.0
+      \item\textbf{DIFFICULTY  :} Easy
+      \item \textbf{DESCRIPTION  : } When any user gives value less than 2 as input to base b in function $log_b x$, the system shall give the alert message that the result is not possible with this value as function is defined for only base $b\neq1$ and $b>0$.
+      \item\textbf{RATIONALE  : } To define the scope of the base b.
+    \end{itemize}
+    
+\section*{Requirement : 4}
+     \begin{itemize}[noitemsep]
+      \item \textbf{ID  : } FUNR4
+      \item \textbf{TYPE  : } Functional Requirement
+      \item \textbf{PRIORITY  : } 1
+      \item \textbf{VERSION  : } 1.0
+      \item\textbf{DIFFICULTY  :} Easy
+      \item \textbf{DESCRIPTION  : } When user gives any other data type other than numbers such as string etc. as an input, the system shall not accept that type and show that input type is not properly defined.
+      \item\textbf{RATIONALE  : } To define that input must be numbers.
+    \end{itemize}
+    
+\section*{Requirement : 5}
+     \begin{itemize}[noitemsep]
+      \item \textbf{ID  : } FUNR5
+      \item \textbf{TYPE  : } Functional Requirement
+      \item \textbf{PRIORITY  : } 1
+      \item \textbf{VERSION  : } 1.0
+      \item\textbf{DIFFICULTY  :} Easy
+      \item \textbf{DESCRIPTION  : } When user gives irrational number such as e as input to base b then system shall calculate natural logarithm.
+      \item\textbf{RATIONALE  : } To define natural logarithm.
+    \end{itemize}
+ 
+ 
+ \section*{Requirement : 6}
+     \begin{itemize}[noitemsep]
+      \item \textbf{ID  : } NFUNR1
+      \item \textbf{TYPE  : } Non-functional Requirement
+      \item \textbf{PRIORITY  : } 1
+      \item \textbf{VERSION  : } 1.0
+      \item\textbf{DIFFICULTY  :} Easy
+      \item \textbf{DESCRIPTION  : } The final output shall have some accuracy up to some point.
+      \item\textbf{RATIONALE  : } To achieve proper accuracy for the system.
+    \end{itemize}
+
+\section*{Requirement : 7}
+     \begin{itemize}[noitemsep]
+      \item \textbf{ID  : } NFUNR2
+      \item \textbf{TYPE  : } Non-functional Requirement
+      \item \textbf{PRIORITY  : } 1
+      \item \textbf{VERSION  : } 1.0
+      \item\textbf{DIFFICULTY  :} Easy
+      \item \textbf{DESCRIPTION  : } The system shall respond in few seconds. 
+      \item\textbf{RATIONALE  : } To achieve response time and performance speed.
+    \end{itemize}  
+
+\end{document}
