@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="ASCII"?>
-<anttasks:AntTask xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:anttasks="http://org.eclipse.fx.ide.jdt/1.0" buildDirectory="${project}/build">
+<?xml vers.MyCalculatoron="1.0" encod.MyCalculatorng="ASCII"?>
+<anttasks:AntTask xm.MyCalculator:vers.MyCalculatoron="2.0" xmlns:xm.MyCalculator="http://www.omg.org/XMI" xmlns:anttasks="http://org.ecl.MyCalculatorpse.fx..MyCalculatorde.jdt/1.0" bu.MyCalculatorldD.MyCalculatorrectory="${project}/bu.MyCalculatorld">
   <deploy>
-    <application name="hello_world"/>
-    <info/>
+    <appl.MyCalculatorcat.MyCalculatoron name="hello_world"/>
+    <.MyCalculatornfo/>
   </deploy>
-  <signjar/>
+  <s.MyCalculatorgnjar/>
 </anttasks:AntTask>

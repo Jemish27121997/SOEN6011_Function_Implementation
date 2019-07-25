@@ -1,5 +1,5 @@
 package main.application;
-	
+    
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -22,60 +22,60 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-	private Stage primaryStage;
-	private AnchorPane anchorPane;
-	MenuBar menuBar = new MenuBar();
-	
-	@Override
-	public void start(Stage primaryStage) {
-		this.primaryStage = primaryStage;
-		primaryStage.setResizable(false);
-	
-		//addMenuBar();
-		mainView();
-		//newView();
-	}
-	
-	public void addMenuBar() {
-		
-		Menu menu = new Menu("Menu");
-		MenuItem mi = new MenuItem("Close");
-		mi.setOnAction(new EventHandler<ActionEvent>() {
-		    public void handle(ActionEvent t) {
-		        System.exit(0);
-		    }
-		});
-		menu.getItems().add(mi);
-		menuBar.getMenus().add(menu);
-		
-		final String os = System.getProperty("os.name");
-		if (os != null && os.startsWith("Mac"))
-		  	menuBar.useSystemMenuBarProperty().set(true);
+    private Stage primaryStage;
+    private AnchorPane anchorPane;
+    MenuBar menuBar = new MenuBar();
+    
+    @Override
+    public void start(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+        primaryStage.setResizable(false);
+    
+        //addMenuBar();
+        mainView();
+        //newView();
+    }
+    
+    public void addMenuBar() {
+        
+        Menu menu = new Menu("Menu");
+        MenuItem mi = new MenuItem("Close");
+        mi.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent t) {
+                System.exit(0);
+            }
+        });
+        menu.getItems().add(mi);
+        menuBar.getMenus().add(menu);
+        
+        final String os = System.getProperty("os.name");
+        if (os != null && os.startsWith("Mac"))
+            menuBar.useSystemMenuBarProperty().set(true);
 
-		BorderPane borderPane = new BorderPane();
-		borderPane.setTop(menuBar);
+        BorderPane borderPane = new BorderPane();
+        borderPane.setTop(menuBar);
 
-		primaryStage.setScene(new Scene(borderPane));
-		primaryStage.show();
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
-	}
-	
-	public void mainView() {
-		try {
-			FXMLLoader loader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
-			System.out.println(loader==null);
-			anchorPane = (AnchorPane) loader.load();
-			MainViewController controller = loader.getController();
-			controller.setMain(this);
-			
-			Scene scene = new Scene(anchorPane);
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}	
-	}
+        primaryStage.setScene(new Scene(borderPane));
+        primaryStage.show();
+    }
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+    public void mainView() {
+        try {
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("MainView.fxml"));
+            System.out.println(loader==null);
+            anchorPane = (AnchorPane) loader.load();
+            MainViewController controller = loader.getController();
+            controller.setMain(this);
+            
+            Scene scene = new Scene(anchorPane);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }   
+    }
 }
