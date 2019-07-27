@@ -1,3 +1,4 @@
+
 package main.application;
 
 import java.text.DecimalFormat;
@@ -14,11 +15,12 @@ import javafx.scene.control.TextInputDialog;
  * This class implements logarithm function, power function, calculates natural log and validates input values and type. 
  * @author Jemish
  *
+ *
  */
 public class MainViewController {
     
     @FXML private TextArea display;
-    @FXML private Button one, two, three, four, five, six, seven, eight, nine, zero, times, divided, plus, minus, log, buttonDelete;
+    @FXML private Button one, two, three, four, five, six, seven, eight, nine, zero, times, divided, plus, minus, log, buttonMemoryRead, buttonMemoryWrite, buttonDelete;
     
     private Boolean[] operator = new Boolean[5];
     private int operatorCount = 0;
@@ -28,6 +30,9 @@ public class MainViewController {
     private String actualText;
     
     private Main main;
+    
+    public static Originator originator = new Originator();
+    public static CareTaker careTaker = new CareTaker();
 	
     /**
      * Default constructor.
@@ -256,12 +261,39 @@ public class MainViewController {
     @FXML public void delete(Event event) {
         buttonDelete.setText("AC");
         display.setText("0");
+        careTaker.mementoList.clear();
         for(int i = 0; i < 2; i++) {
             temporary[i] = 0;
         }
         for(int i = 0; i<5; i++) {
             operator[i] = false;
         }
+    }
+    
+    /**
+     * This method stores the final result into memory using momento pattern.
+     * @param event FXML event
+     */
+    @FXML public void memoryWrite(Event event) {
+      System.out.println("in memory write");
+      if(display.getText().split(":").length>1)
+      {
+        String s[]=display.getText().split(":");
+        originator.setState(s[1]);
+      }
+      else
+        originator.setState(display.getText());
+      careTaker.add(originator.saveStateToMemento());
+    }
+    
+    /**
+     * This method retrieves the state from memory using momento pattern.  
+     * @param event FXML Event
+     */
+    @FXML public void memoryRead(Event event) {
+      System.out.println("in memory read");
+      originator.getStateFromMemento(careTaker.get(0));
+      display.setText("History : " +originator.getState());
     }
     
     
@@ -275,6 +307,7 @@ public class MainViewController {
         if (display.getText() != ""){
             actualText = display.getText();
         }
+        
         Button btn = (Button) event.getSource();
         String operation = btn.getId();
         switch(operation) {
@@ -361,6 +394,6 @@ public class MainViewController {
             result = Double.parseDouble(df.format(result));
         }
         System.out.println("result: "+result);
-        display.setText("Result : " +Double.toString(result));
+        display.setText("Result : " +Double.toString(result));    
     }
 }
