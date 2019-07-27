@@ -1,12 +1,12 @@
 package test.application;
 
+import main.application.MainViewController;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import main.application.MainViewController;
 /**
- * 
+ * This is Runner Class.
  * @author Jemish
  *
  */
